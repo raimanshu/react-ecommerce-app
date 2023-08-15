@@ -1,6 +1,3 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 // import './App.css'
 import "./assets/input.css";
 // import Home from '../src/views/home/Home'
@@ -19,17 +16,23 @@ import AppButton from "./components/widgets/AppButton";
 import Login from "./views/authentication/Login";
 import Register from "./views/authentication/Register";
 import ForgetPassword from "./views/authentication/ForgetPassword";
+import CheckoutRoutes from "./routes/CheckoutRoutes";
 import { Navigate, Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import Test from "./views/Test";
+import AppConstants from "./constants/AppConstants";
 
 function App() {
   return (
     <>
       <Router>
         <Routes>
-          <Route path="/" element={<Navigate to="/login" replace />} />
-          <Route path="/login" element={<Login />}></Route>
-          <Route path="/register" element={<Register />}></Route>
-          <Route path="/forget-password" element={<ForgetPassword />}></Route>
+          <Route path="/" element={<Navigate to={`/${AppConstants.APP_ROOT_PATH.LOGIN}`} replace />} />
+          <Route path={`/${AppConstants.APP_ROOT_PATH.CHECKOUT}/*`} element={<CheckoutRoutes />} />
+
+
+          <Route path={`/${AppConstants.APP_ROOT_PATH.LOGIN}`} element={<Login />}></Route>
+          <Route path={`/${AppConstants.APP_ROOT_PATH.REGISTER}`} element={<Register />}></Route>
+          <Route path={`/${AppConstants.APP_ROOT_PATH.FORGOT_PASSWORD}`} element={<ForgetPassword />}></Route>
           <Route path="/home" element={<Home />}></Route>
           <Route path="/product-detail" element={<ProductDetail />}></Route>
           <Route path="/user-profile" element={<UserProfile />}></Route>
@@ -41,6 +44,7 @@ function App() {
           <Route path="/checkout" element={<CheckoutPage />}></Route>
           <Route path="/payment-success" element={<PaymentSuccessPage />}></Route>
           <Route path="/order-reciept" element={<OrderReceiptPage />}></Route>
+          <Route path="/test" element={<Test />}></Route>
         </Routes>
       </Router>
 

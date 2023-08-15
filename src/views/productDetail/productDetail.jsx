@@ -51,12 +51,12 @@ const ProductDetail = () => {
     reviews: 128,
   };
 
-  const relatedProducts = Array.from({ length: 4 }).map((_, i) => ({
-    id: i,
-    title: `Related Product ${i + 1}`,
-    price: (i + 1) * 50,
-    image: `https://source.unsplash.com/300x300/?product,${i}`,
-  }));
+  // const relatedProducts = Array.from({ length: 4 }).map((_, i) => ({
+  //   id: i,
+  //   title: `Related Product ${i + 1}`,
+  //   price: (i + 1) * 50,
+  //   image: `https://source.unsplash.com/300x300/?product,${i}`,
+  // }));
   return (
     // <div className="bg-white text-gray-900 min-h-screen">
     //     <div className="max-w-6xl mx-auto py-12 px-4 md:flex md:gap-10">
